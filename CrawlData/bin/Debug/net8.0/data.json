@@ -1,0 +1,24 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Nhóm từ thiện Hoa Hướng Dương",
+    "Phone": null,
+    "Website": "www.facebook.com/nhomtuthienHoaHuongDuong",
+    "Description": "là nhóm từ thiện được thành lập nhẳm giúp đỡ bệnh nhân nghèo, người già neo đơn, trẻ em khuyết tật,hoc sinh nghèo vượt khó...",
+    "Address": "261 Tên Lửa, phường Bình Trị Đông, quận Bình Tân, TP HCM, Việt Nam, 700000",
+    "Province": "TP HCM",
+    "District": "quận Bình Tân",
+    "Ward": "phường Bình Trị Đông"
+  },
+  {
+    "Id": 2,
+    "Name": "Nhóm từ thiện Hoa Hướng Dương",
+    "Phone": null,
+    "Website": "www.facebook.com/nhomtuthienHoaHuongDuong",
+    "Description": "là nhóm từ thiện được thành lập nhẳm giúp đỡ bệnh nhân nghèo, người già neo đơn, trẻ em khuyết tật,hoc sinh nghèo vượt khó...",
+    "Address": "261 Tên Lửa, phường Bình Trị Đông, quận Bình Tân, TP HCM, Việt Nam, 700000",
+    "Province": "TP HCM",
+    "District": "quận Bình Tân",
+    "Ward": "phường Bình Trị Đông"
+  }
+]
