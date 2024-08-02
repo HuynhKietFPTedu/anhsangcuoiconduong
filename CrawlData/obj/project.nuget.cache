@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnIzkVCzUEI=",
+  "dgSpecHash": "tNZsd4I0H9E=",
   "success": true,
-  "projectFilePath": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\CrawlData.csproj",
+  "projectFilePath": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\CrawlData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TuKi2901\\.nuget\\packages\\htmlagilitypack\\1.11.61\\htmlagilitypack.1.11.61.nupkg.sha512",
     "C:\\Users\\TuKi2901\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"

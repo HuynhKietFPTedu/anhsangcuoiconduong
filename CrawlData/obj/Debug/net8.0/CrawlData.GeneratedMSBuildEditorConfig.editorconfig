@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CrawlData
-build_property.ProjectDir = D:\FPT Polytechnic\PDP201\Website\CrawlData\
+build_property.ProjectDir = d:\FPT Polytechnic\CSharp6\Lab\ASM\anhsangcuoiconduong\CrawlData\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

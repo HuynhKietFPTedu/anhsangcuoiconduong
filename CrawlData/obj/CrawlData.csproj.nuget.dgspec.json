@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\CrawlData.csproj": {}
+    "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\CrawlData.csproj": {}
   },
   "projects": {
-    "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\CrawlData.csproj": {
+    "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\CrawlData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\CrawlData.csproj",
+        "projectUniqueName": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\CrawlData.csproj",
         "projectName": "CrawlData",
-        "projectPath": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\CrawlData.csproj",
+        "projectPath": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\CrawlData.csproj",
         "packagesPath": "C:\\Users\\TuKi2901\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\obj\\",
+        "outputPath": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
