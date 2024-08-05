@@ -7,8 +7,9 @@
     <title>Ánh sáng cuối con đường</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" asp-append-version="true" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        asp-append-version="true" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-qFOQ9YFAeGj1gDOuUD61g3D+tLDv3u1ECYWqT82WQoaWrOhAY+5mRMTTVsQdWutbA5FORCnkEPEgU0OF8IzGvA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -19,15 +20,17 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <style>
-        .icon-img{
+        .icon-img {
             width: 30px;
             height: 25px;
             object-fit: cover
         }
-        .btn-social{
+
+        .btn-social {
             margin: 0 5px;
             border-radius: 15px;
         }
+
         .org {
             border-radius: 10px;
             scale: 1;
@@ -46,6 +49,13 @@
             object-fit: cover;
         }
     </style>
+    <script>function storeOrg(orgString) {
+        var org = JSON.parse(decodeURIComponent(orgString));
+        localStorage.setItem('org', JSON.stringify(org));
+        //window.location.href = 'detail.html';
+        window.open('detail.html', '_blank');
+    }
+</script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3P0QC8MZV"></script>
@@ -70,8 +80,8 @@
                 <p class="text-muted">Thông tin về từ thiện, các tổ chức từ thiện uy tín tại thành phố Hồ Chí Minh</p>
 
             </div>
-            <img src="https://www.championgroup.co.uk/wp-content/uploads/2021/03/Charity.jpg"
-                style="object-fit: cover;" class="w-75" alt="">
+            <img src="https://www.championgroup.co.uk/wp-content/uploads/2021/03/Charity.jpg" style="object-fit: cover;"
+                class="w-75" alt="">
         </div>
 
         <div class="row mt-5">
@@ -88,7 +98,7 @@
                     </div>
                     <button class="btn btn-primary align-content-lg-between ms-5" type="submit">Xác nhận</button>
                 </form>
-
+                <p id="countOrg"></p>
             </aside>
             <article class="col-sm-8 list">
 
@@ -97,12 +107,16 @@
             </article>
 
 
-<div class="d-flex justify-content-around my-5">
-            <iframe width="695" height="391" src="https://www.youtube.com/embed/03buZVBDaMw" title="Tuổi xế - Tần Võ ft Đình Quý (CAT) [Official MV]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+            <div class="d-flex justify-content-around my-5">
+                <iframe width="695" height="391" src="https://www.youtube.com/embed/03buZVBDaMw"
+                    title="Tuổi xế - Tần Võ ft Đình Quý (CAT) [Official MV]" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
             <script>
                 // Load tỉnh thành và quận huyện
+
                 var citis = document.getElementById("city");
                 var districts = document.getElementById("district");
                 var Parameter = {
@@ -121,8 +135,8 @@
 
                 function renderCity(data) {
                     for (const x of data) {
-                        if(x.Name == "Thành phố Hồ Chí Minh")
-                        citis.options[citis.options.length] = new Option(x.Name, x.Id);
+                        if (x.Name == "Thành phố Hồ Chí Minh")
+                            citis.options[citis.options.length] = new Option(x.Name, x.Id);
                     }
                     citis.onchange = function () {
                         districts.length = 1;
@@ -148,39 +162,63 @@
                             threshold: 0.3 // Adjust the threshold for matching precision
                         });
                         console.log(data);
-
+                        
                         function renderRecords(data) {
                             const recordsContainer = document.getElementById("records");
                             recordsContainer.innerHTML = "";
                             data.forEach(record => {
                                 var linkWebsite = record.Website == null ? '#' : 'https://' + record.Website;
+                                if (linkWebsite === '#') {
+                                    return;
+                                }
+                                // Tạo một object đơn giản với cú pháp object literal
+                                var org = {
+                                    Id: record.Id,
+                                    Name: record.Name,
+                                    Phone: record.Phone,
+                                    Website: record.Website,
+                                    Img: record.Img,
+                                    Description: record.Description,
+                                    Address: record.Address,
+                                    Province: record.Province,
+                                    District: record.District,
+                                    ImgHero: record.ImgHero
+                                };
+
+                                var orgString = encodeURIComponent(JSON.stringify(record));
                                 const recordElement = `
-                    <div class="mb-3 border-1 border p-3 shadow org">
-                        <div class="">
-                            <h3><a href="${linkWebsite}" class="text-decoration-none text-success"><span itemprop="name">${record.Name}</span></a></h3>
-                        </div>
-                        <div class="d-flex">
-                            <a href="${linkWebsite}" class="text-decoration-none text-success">
-                                <img src="${record.Img}" class="img-thumbnail icon" alt="">
-                            </a>
-                            <div class="mx-3">
-                                <p class="m-0">
-                                    <a rel="tag" class="text-decoration-none text-success" href="#">${record.Address}</a>
-                                </p>
-                                <p class="m-0">
-                                    <a href="${linkWebsite}" class="text-decoration-none text-success" target="_blank">${record.Website == null ? "" : record.Website}</a>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="text-truncate text-nowrap" style="max-width: 100%;">
-                            ${record.Description}
-                        </p>
-                    </div>
-                `;
+                                    <div class="mb-3 border-1 border p-3 shadow org">
+                                        <div class="">
+                                            <h3><a href="javascript:void(0);"  target="_blank"  onclick="storeOrg('${orgString}')" class="text-decoration-none text-success"><span itemprop="name">${record.Name}</span></a></h3>
+                                        </div>
+                                        <div class="d-flex">
+                                            <a href="${linkWebsite}" target="_blank" class="text-decoration-none text-success">
+                                                <img src="${record.Img}" class="img-thumbnail icon" alt="">
+                                            </a>
+                                            <div class="mx-3">
+                                                <p class="m-0">
+                                                    <a rel="tag" class="text-decoration-none text-success" href="#">${record.Address}</a>
+                                                </p>
+                                                <p class="m-0">
+                                                    <a href="${linkWebsite}" class="text-decoration-none text-success" target="_blank">${record.Website == null ? "" : record.Website}</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-truncate text-nowrap" style="max-width: 100%;">
+                                            ${record.Description}
+                                        </p>
+                                    </div>
+                                `;
                                 recordsContainer.innerHTML += recordElement;
                             });
+                        
+                            // Tổng các tổ chức từ thiện
+                            var tong = document.querySelectorAll('.org').length;
+                            var p = document.getElementById('countOrg');
+                            p.textContent = 'Đã tìm ra ' + tong + ' tổ chức từ thiện trong ' + districts.options[districts.selectedIndex].text;
                         }
-
+                    
+                        
                         // Gọi hàm để render các record
                         document.getElementById('filter').addEventListener('submit', function (event) {
                             event.preventDefault(); // Ngăn chặn hành vi mặc định của form
@@ -226,7 +264,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <h5>Về chúng tôi</h5>
-                        <p>Một dự án miễn phí dành cho cộng đồng gồm 5 trái tim nhiệt huyết, muốn giúp mọi người có thể đến những nơi từ thiện uy tín</p>
+                        <p>Một dự án miễn phí dành cho cộng đồng gồm 5 trái tim nhiệt huyết, muốn giúp mọi người có thể
+                            đến những nơi từ thiện uy tín</p>
                     </div>
                     <div class="col-md-4">
                         <h5>Thông tin liên hệ</h5>
@@ -239,16 +278,19 @@
                     <div class="col-md-4">
                         <h5>Theo dõi chúng tôi</h5>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social"  href="https://x.com/TuKi2901">
+                            <a class="btn btn-outline-light btn-social" target="_blank" href="https://x.com/TuKi2901">
                                 <i class="fa-brands fa-x-twitter icon-img"></i>
                             </a>
-                            <a class="btn btn-outline-primary btn-social" href="https://www.facebook.com/profile.php?id=61563316556670">
+                            <a class="btn btn-outline-primary btn-social" target="_blank"
+                                href="https://www.facebook.com/profile.php?id=61563316556670">
                                 <i class="fab fa-facebook-f icon-img"></i>
                             </a>
-                            <a class="btn btn-outline-danger btn-social" href="https://www.youtube.com/@%C3%81nhs%C3%A1ngcu%E1%BB%91icon%C4%91%C6%B0%E1%BB%9Dng-e5q">
+                            <a class="btn btn-outline-danger btn-social" target="_blank"
+                                href="https://www.youtube.com/@%C3%81nhs%C3%A1ngcu%E1%BB%91icon%C4%91%C6%B0%E1%BB%9Dng-e5q">
                                 <i class="fab fa-youtube icon-img"></i>
                             </a>
-                            <a class="btn btn-outline-primary btn-social" href="https://www.linkedin.com/in/huynhkiet-dev">
+                            <a class="btn btn-outline-primary btn-social" target="_blank"
+                                href="https://www.linkedin.com/in/huynhkiet-dev">
                                 <i class="fab fa-linkedin-in icon-img"></i>
                             </a>
                         </div>

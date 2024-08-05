@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\",
+  "WorkspaceRootPath": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB36A3CA-37D1-4A83-9B85-400DECB45A1B}|CrawlData.csproj|d:\\fpt polytechnic\\pdp201\\website\\crawldata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FB36A3CA-37D1-4A83-9B85-400DECB45A1B}|CrawlData.csproj|d:\\fpt polytechnic\\csharp6\\lab\\asm\\anhsangcuoiconduong\\crawldata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB36A3CA-37D1-4A83-9B85-400DECB45A1B}|CrawlData.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -48,11 +48,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\Program.cs",
+              "DocumentMoniker": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\FPT Polytechnic\\PDP201\\Website\\CrawlData\\Program.cs",
+              "ToolTip": "D:\\FPT Polytechnic\\CSharp6\\Lab\\ASM\\anhsangcuoiconduong\\CrawlData\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-10T09:39:36.607Z",
               "EditorCaption": ""
