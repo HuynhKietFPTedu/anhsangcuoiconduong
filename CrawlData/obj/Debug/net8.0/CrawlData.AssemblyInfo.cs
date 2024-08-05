@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrawlData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c512c652945cbab01ee636d0d0627b8278b8c67")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43e76a68d86bb09d7fda4d95e6bfaeefb0190d9f")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("CrawlData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrawlData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
